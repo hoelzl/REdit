@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebResourcesPaths">
+    <contentEntries>
+      <entry url="file://$PROJECT_DIR$">
+        <entryData>
+          <resourceRoots>
+            <path value="file://$PROJECT_DIR$/src" />
+            <path value="file://$PROJECT_DIR$/src/js" />
+            <path value="file://$PROJECT_DIR$/src/templates" />
+            <path value="file://$PROJECT_DIR$/src/vendor/bootstrap/dist" />
+            <path value="file://$PROJECT_DIR$/src/vendor/angular" />
+            <path value="file://$PROJECT_DIR$/src/vendor/angular-bootstrap" />
+            <path value="file://$PROJECT_DIR$/src/vendor/angular-mocks" />
+            <path value="file://$PROJECT_DIR$/src/vendor/angular-route" />
+            <path value="file://$PROJECT_DIR$/src/vendor/angular-ui-utils" />
+            <path value="file://$PROJECT_DIR$/src/vendor/fabric/dist" />
+            <path value="file://$PROJECT_DIR$/src/vendor/jquery/dist" />
+            <path value="file://$PROJECT_DIR$/src/vendor/lodash/dist" />
+            <path value="file://$PROJECT_DIR$/src/vendor/requirejs" />
+            <path value="file://$PROJECT_DIR$/src/vendor/requirejs-domready" />
+            <path value="file://$PROJECT_DIR$/src/vendor/traceur-runtime" />
+            <path value="file://$PROJECT_DIR$/src/js/model" />
+          </resourceRoots>
+        </entryData>
+      </entry>
+    </contentEntries>
+  </component>
+</project>
+
