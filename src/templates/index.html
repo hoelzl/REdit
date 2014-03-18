@@ -166,17 +166,25 @@
             <label for="inspector-room-title" class="col-md-4">Title:</label>
             <input id="inspector-room-title"
                    class="col-md-8" type="text"
-                   data-ng-model="current.room.title"><br>
+                   data-ng-model="current.room.title">
         </div>
-        <div class="row">
-            <label for="inspector-room-json" class="col-md-4">Object:</label>
+        <div class="row" style="padding: 10px 0 0 0">
+            <label for="inspector-room-json" class="col-md-4">Selection:</label>
             <div id="inspector-room-json"
                       class="col-md-8"
-                    style="background-color: white; overflow: hidden;">
-                {{selectedObject.objectType || 'no object'}}
-                ({{selectedObject.left||''|number:1}},
-                 {{selectedObject.top||''|number:1}})
+                    style="padding: 0; overflow: hidden;">
+                {{selectedObject.objectType || 'no object selected'}}
                     </div>
+        </div>
+        <div class="row">
+            <label for="inspector-selected-left" class="col-md-4">Left:</label>
+            <input id="inspector-selected-left" class="col-md-8" type="number"
+                   data-ng-model="selectedObject.left">
+        </div>
+        <div class="row">
+            <label for="inspector-selected-top" class="col-md-4">Top:</label>
+            <input id="inspector-selected-top" class="col-md-8" type="number"
+                   data-ng-model="selectedObject.top">
         </div>
     </div>
 </div>
