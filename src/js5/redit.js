@@ -15,15 +15,18 @@ var paths = {
    'ui.utils':     'vendor/angular-ui-utils/ui-utils',
 
    'NavbarController':    'js/controllers/NavbarController',
-   'RoomController':    'js/controllers/RoomController',
-   'REditController':    'js/controllers/REditController',
+   'RoomController':      'js/controllers/RoomController',
+   'REditController':     'js/controllers/REditController',
    'InspectorController': 'js/controllers/InspectorController',
 
    'DrawingService': 'js/services/DrawingService',
-   'RoomService':   'js/services/RoomService',
+   'RoomService':    'js/services/RoomService',
 
-   'EventEmitter': 'js/model/EventEmitter',
-   'Room':        'js/model/Room',
+   'EventEmitter':    'js/model/EventEmitter',
+   'Room':            'js/model/Room',
+   'Node':            'js/model/Node',
+   'RadiationSource': 'js/model/RadiationSource',
+   'Door':            'js/model/Door',
 
    'app':         'js/app',
    'config':      'js/config',

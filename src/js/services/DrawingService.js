@@ -9,16 +9,15 @@ module jQuery from 'jquery';
 
 import {app} from 'app';
 import {Room} from 'Room';
+import {Node} from 'Node';
+import {Door} from 'Door';
+import {RadiationSource} from 'RadiationSource';
 
 import EventEmitter from 'EventEmitter';
 
 // To make WebStorm happy...
 var domReady;
 
-
-function mergeDefaultParameters (parameters, defaults) {
-   return jQuery.extend(parameters || {}, defaults);
-}
 
 var MIN_CHANGE = 1e-8;
 
@@ -191,9 +190,8 @@ export class DrawingService extends EventEmitter {
       }
    }
 
-   newObject (cont, kind = fabric.Rect, parameters = {}, defaults = {}) {
-      parameters = mergeDefaultParameters(parameters, defaults);
-      var obj = new kind(parameters);
+   newObject (cont, kind = Node) {
+      var obj = new kind(this.scale);
       // This is to make sure that inconsistent values in the design are updated
       // before the object is passed to the application (e.g., rx != ry for
       // rectangles).
@@ -251,55 +249,16 @@ export class DrawingService extends EventEmitter {
       }
    }
 
-   generateDesign (parameters) {
-      var result = {};
-      for (var key in parameters) {
-         var value = parameters[key];
-         if (value[0] >= 0) {
-            result[key] = value[0] * Math.random() + value[1];
-         } else {
-            value[0] = -value[0];
-            result[key] = Math.random() > 0.5 ?
-               value[0] * Math.random() + value[1] : 0;
-         }
-      }
-      return result;
-   }
-
-   nodeDefaults (objectType, color = 'green', radius = 10) {
-      var design = this.generateDesign({
-                                          radius: [0, radius],
-                                          top:    [900, 0],
-                                          left:   [1500, 0]
-                                       });
-      design.top += design.radius;
-      design.left += design.radius;
-      var scale = this.scale;
-
-      return {
-         design:      design,
-         radius:      design.radius,
-         top: design.top * scale,
-         left: design.left * scale,
-         hasControls: false,
-         fill:        color,
-         objectType:  objectType
-      };
-   }
-
    newNode (cont, parameters = {}) {
-      this.newObject(cont, fabric.Circle, parameters,
-                     this.nodeDefaults('node'));
+      this.newObject(cont, Node);
    }
 
-   newDoor (cont, parameters = {}) {
-      this.newObject(cont, fabric.Circle, parameters,
-                     this.nodeDefaults('door', 'blue'));
+   newDoor (cont) {
+      this.newObject(cont, Door);
    }
 
-   newRadiationSource (cont, parameters = {}) {
-      this.newObject(cont, fabric.Circle, parameters,
-                     this.nodeDefaults('radiation', 'red', 15));
+   newRadiationSource (cont) {
+      this.newObject(cont, RadiationSource);
    }
 
 
