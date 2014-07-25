@@ -108,6 +108,8 @@ function REditController ($scope, config, drawingService, roomService) {
 
    $scope.addNode = makeObjectAdder('newNode');
 
+   $scope.addVictim = makeObjectAdder('newVictim');
+
    $scope.addDoor = makeObjectAdder('newDoor');
 
    $scope.addRadiationSource = makeObjectAdder('newRadiationSource');

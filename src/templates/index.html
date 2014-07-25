@@ -97,10 +97,17 @@
                                data-ng-click="addNode()">
                                 Add Node
                             </a>
-                        </li>                        <li>
+                        </li>
+                        <li>
                             <a role="button"
                                data-ng-click="addDoor()">
                                 Add Door
+                            </a>
+                        </li>
+                        <li>
+                            <a role="button"
+                               data-ng-click="addVictim()">
+                                Add Victim
                             </a>
                         </li>
                         <li>
@@ -161,7 +168,7 @@
         <div id="json-div"
              data-ng-if="jsonDiv.visible"
              style="position: absolute;width: 600px">
-            {{current.room.toJson()}}
+            {{current.room.toSimplifiedJson()}}
         </div>
     </div>
     <div id="inspector"
@@ -181,11 +188,12 @@
         </div>
         <div class="row" style="padding: 10px 0 0 0">
             <label for="inspector-room-json" class="col-md-4">Selection:</label>
+
             <div id="inspector-room-json"
-                      class="col-md-8"
-                    style="padding: 0; overflow: hidden;">
+                 class="col-md-8"
+                 style="padding: 0; overflow: hidden;">
                 {{selectedObject.objectType || 'no object selected'}}
-                    </div>
+            </div>
         </div>
         <div class="row">
             <label for="inspector-selected-left" class="col-md-4">Left:</label>
@@ -198,9 +206,25 @@
                    data-ng-model="selectedObject.top">
         </div>
         <div class="row">
-            <label for="inspector-selected-strength" class="col-md-4">Strength:</label>
-            <input id="inspector-selected-strength" class="col-md-8" type="number"
+            <label for="inspector-selected-strength"
+                   class="col-md-4">Strength:</label>
+            <input id="inspector-selected-strength" class="col-md-8"
+                   type="number"
                    data-ng-model="selectedObject.strength">
+        </div>
+        <div class="row">
+            <label for="inspector-selected-home"
+                   class="col-md-4">Home?:</label>
+            <input id="inspector-selected-home" class="col-md-8"
+                   type="checkbox"
+                   data-ng-model="selectedObject.home">
+        </div>
+        <div class="row">
+            <label for="inspector-selected-value"
+                   class="col-md-4">Value:</label>
+            <input id="inspector-selected-value" class="col-md-8"
+                   type="number"
+                   data-ng-model="selectedObject.value">
         </div>
     </div>
 </div>

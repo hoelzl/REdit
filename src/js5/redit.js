@@ -27,6 +27,7 @@ var paths = {
    'Node':            'js/model/Node',
    'RadiationSource': 'js/model/RadiationSource',
    'Door':            'js/model/Door',
+   'Victim':          'js/model/Victim',
 
    'app':         'js/app',
    'config':      'js/config',

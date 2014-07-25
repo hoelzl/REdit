@@ -46,11 +46,14 @@ export function nodeDefaults (scale, color = 'green', radius = 10) {
    };
 }
 
+export var nodeId = 1;
+
 export var Node = fabric.util.createClass(fabric.Circle, {
    initialize: function (scale, options = {}) {
       options = mergeDefaults(options, nodeDefaults(scale));
       this.callSuper('initialize', options);
-      this.class = 'Node';
+      this.id = nodeId++;
+      this.home = false;
    }
 });
 
@@ -58,3 +61,15 @@ Object.defineProperty(Node.prototype, 'objectType', { get: () => {
    return 'node'
 }});
 
+Node.prototype.toSimplifiedObject = function (exportedProperties) {
+   var obj = this.toObject(exportedProperties);
+   var result = {
+      x:          obj.design.left,
+      y:          obj.design.top,
+      id:         `${obj.id}`,
+      objectType: obj.objectType,
+      home:       obj.home,
+      strength: obj.strength
+   };
+   return result;
+};

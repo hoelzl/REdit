@@ -11,6 +11,7 @@ import {app} from 'app';
 import {Room} from 'Room';
 import {Node} from 'Node';
 import {Door} from 'Door';
+import {Victim} from 'Victim';
 import {RadiationSource} from 'RadiationSource';
 
 import EventEmitter from 'EventEmitter';
@@ -260,6 +261,10 @@ export class DrawingService extends EventEmitter {
 
    newDoor (cont) {
       this.newObject(cont, Door);
+   }
+
+   newVictim (cont) {
+      this.newObject(cont, Victim);
    }
 
    newRadiationSource (cont) {
