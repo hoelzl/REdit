@@ -125,6 +125,11 @@
                                         Toggle Inspector
                                     </a>
                                 </li>
+                                <li>
+                                    <a data-ng-click="toggle(jsonDiv)">
+                                        Toggle JSON Pane
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -153,7 +158,9 @@
     <div id="container-div"
          style="position:absolute; background-color: darkgray;">
         <canvas id="main-canvas" style="z-index: 3"></canvas>
-        <div id="json-div" style="position: absolute;width: 600">
+        <div id="json-div"
+             data-ng-if="jsonDiv.visible"
+             style="position: absolute;width: 600px">
             {{current.room.toJson()}}
         </div>
     </div>

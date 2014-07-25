@@ -92,6 +92,10 @@ function REditController ($scope, config, drawingService, roomService) {
       visible: true
    };
 
+   $scope.jsonDiv = {
+      visible: false
+   };
+
    $scope.toggle = (thing) => {
       thing.visible = !thing.visible;
       drawingService.invalidateLayout();
