@@ -13,11 +13,11 @@ var dist = (p1, p2) => {
    var y2 = p2.y;
    var x = x1 - x2;
    var y = y1 - y2;
-   return Math.sqrt(x*x + y*y);
+   return Math.sqrt(x * x + y * y);
 };
 
 var dist3 = (p1, p2, p3) => {
-   var center = {x: (p1.x + p2.x)/2, y: (p1.y + p2.y)/2};
+   var center = {x: (p1.x + p2.x) / 2, y: (p1.y + p2.y) / 2};
    return dist(center, p3);
 };
 
@@ -27,16 +27,18 @@ export class Room extends EventEmitter {
       this.title = title;
       this.objects = objects;
       this.id = currentId++;
-      this.exportedSlots = ['design', 'objectType', 'strength', 'value', 'home', 'id'];
+      this.exportedSlots = ['design', 'objectType', 'strength', 'value', 'home',
+                            'id', 'objects'];
    }
 
    computeEdges (allNodes) {
 
       var edges = [];
       var objects = _.filter(allNodes, node => node.objectType !== 'radiation');
-      var radiationSources = _.filter(allNodes, node => node.objectType === 'radiation');
+      var radiationSources = _.filter(allNodes,
+                                      node => node.objectType === 'radiation');
       for (var i = 0; i < objects.length - 1; i++) {
-         for (var j = i+1; j < objects.length; j++) {
+         for (var j = i + 1; j < objects.length; j++) {
             var p1 = objects[i], p2 = objects[j];
             var x1 = p1.x;
             var y1 = p1.y;
@@ -47,7 +49,8 @@ export class Room extends EventEmitter {
             for (var k = 0; k < radiationSources.length; k++) {
                var radiationDist = dist3(p1, p2, radiationSources[k]);
                console.log('radiationDist', radiationDist, cost);
-               cost += 10000 * (radiationSources[k].strength || 1) / (radiationDist * radiationDist);
+               cost += 10000 * (radiationSources[k].strength || 1) /
+                       (radiationDist * radiationDist);
                console.log('new cost', cost);
             }
             edges.push({from: {x: x1, y: y1}, to: {x: x2, y: y2}, cost: cost, dist: distance});
@@ -66,7 +69,8 @@ export class Room extends EventEmitter {
    }
 
    toSimplifiedObject () {
-      var objects = _.map(this.objects, obj => obj.toSimplifiedObject(this.exportedSlots));
+      var objects = _.map(this.objects,
+                          obj => obj.toSimplifiedObject(this.exportedSlots));
       return {
          homes: _.filter(objects, obj => obj.home),
          nodes: _.filter(objects, obj => obj.objectType !== 'radiation'),

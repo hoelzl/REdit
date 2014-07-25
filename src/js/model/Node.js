@@ -54,6 +54,7 @@ export var Node = fabric.util.createClass(fabric.Circle, {
       this.callSuper('initialize', options);
       this.id = nodeId++;
       this.home = false;
+      this.objects = () => []
    }
 });
 
@@ -69,7 +70,8 @@ Node.prototype.toSimplifiedObject = function (exportedProperties) {
       id:         `${obj.id}`,
       objectType: obj.objectType,
       home:       obj.home,
-      strength: obj.strength
+      strength:   obj.strength,
+      objects:    obj.objects()
    };
    return result;
 };
