@@ -50,6 +50,7 @@ export var Node = fabric.util.createClass(fabric.Circle, {
    initialize: function (scale, options = {}) {
       options = mergeDefaults(options, nodeDefaults(scale));
       this.callSuper('initialize', options);
+      this.class = 'Node';
    }
 });
 

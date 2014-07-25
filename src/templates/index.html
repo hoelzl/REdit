@@ -73,7 +73,8 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a role="button">
+                                    <a role="button"
+                                       data-ng-click="generateJson()">
                                         Generate JSON
                                     </a>
                                 </li>
@@ -152,6 +153,9 @@
     <div id="container-div"
          style="position:absolute; background-color: darkgray;">
         <canvas id="main-canvas" style="z-index: 3"></canvas>
+        <div id="json-div" style="position: absolute;width: 600">
+            {{current.room.toJson()}}
+        </div>
     </div>
     <div id="inspector"
          data-ng-if="inspector.visible"
@@ -185,6 +189,11 @@
             <label for="inspector-selected-top" class="col-md-4">Top:</label>
             <input id="inspector-selected-top" class="col-md-8" type="number"
                    data-ng-model="selectedObject.top">
+        </div>
+        <div class="row">
+            <label for="inspector-selected-strength" class="col-md-4">Strength:</label>
+            <input id="inspector-selected-strength" class="col-md-8" type="number"
+                   data-ng-model="selectedObject.strength">
         </div>
     </div>
 </div>

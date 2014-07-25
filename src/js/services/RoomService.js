@@ -83,6 +83,11 @@ export class RoomService {
       }
    }
 
+   generateJson () {
+      var room = this.current();
+      return room.toJson();
+   }
+
    newRoom () {
       var newRoom = new Room();
       newRoom.textSanitizor = this.$sce.trustAsHtml;

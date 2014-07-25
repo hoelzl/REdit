@@ -9,6 +9,7 @@ export var Door = fabric.util.createClass(Node, {
    initialize: function (scale, options = {}) {
       options = mergeDefaults(options, nodeDefaults(scale, 'blue'));
       this.callSuper('initialize', scale, options);
+      this.class = 'Door';
    }
 });
 

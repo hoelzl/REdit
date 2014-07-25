@@ -17,7 +17,7 @@ export class Room extends EventEmitter {
    toObject () {
       return { //
          title:     this.title,
-         objects:   _.map(this.objects, obj => obj.toObject(['design'])),
+         objects:   _.map(this.objects, obj => obj.toObject(['design', 'class', 'strength'])),
          id:        this.id
       }
    }

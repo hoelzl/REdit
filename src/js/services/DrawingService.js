@@ -28,6 +28,7 @@ export class DrawingService extends EventEmitter {
       // console.log('Creating new DrawingService');
 
       var mainCanvas = document.getElementById('main-canvas');
+      var jsonDiv = document.getElementById('json-div');
       var containerDiv = document.getElementById('container-div');
       // TODO: Get these values from the configuration.
       var designHeight = 1000;
@@ -73,9 +74,13 @@ export class DrawingService extends EventEmitter {
          mainCanvas.height = designHeight;
          mainCanvas.width = designWidth;
       }
+      if (jsonDiv) {
+         jsonDiv.width = designWidth;
+      }
 
       this._mainCanvas = mainCanvas;
       this._fabricCanvas = fabricCanvas;
+      this._jsonDiv = jsonDiv;
       this._containerDiv = containerDiv;
       this._designHeight = designHeight;
       this._designWidth = designWidth;
@@ -286,6 +291,7 @@ export class DrawingService extends EventEmitter {
       // Clear the canvas
       //noinspection SillyAssignmentJS
       canvas.width = canvas.width;
+      // this._jsonDiv.width = canvas.width;
 
       var fabricCanvas = this._fabricCanvas;
       if (fabricCanvas) {
@@ -299,7 +305,7 @@ export class DrawingService extends EventEmitter {
    }
 
    computeMaxDimensions (canvas = this._mainCanvas) {
-      canvas = $(canvas);
+      canvas = $(canvas);  // Huh? Why do we pass canvas as parameter then? --tc
       var roomList = $('#room-list');
 
       if (roomList.length > 0) {
@@ -329,7 +335,7 @@ export class DrawingService extends EventEmitter {
    }
 
    computeScaledDimensions (canvas = this._mainCanvas) {
-      canvas = $(canvas);
+      canvas = $(canvas);  // See above --tc
 
       var maxDimensions = this.computeMaxDimensions(canvas);
       var designHeight = this._designHeight;

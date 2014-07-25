@@ -70,6 +70,9 @@ function REditController ($scope, config, drawingService, roomService) {
    $scope.revision = () => {
       return roomService.revision();
    };
+   $scope.generateJson = () => {
+      return roomService.generateJson();
+   };
    $scope.newRoom = () => {
       return roomService.newRoom();
    };
