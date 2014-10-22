@@ -4,16 +4,16 @@
   "repository": "https://github.com/hoelzl/REdit/",
   "dependencies": {},
   "devDependencies": {
-      "broccoli": "^0.4.1",
-      "broccoli-static-compiler": "^0.1.1",
-      "broccoli-traceur": "^0.1.0",
-      "karma": "^0.12.0",
-      "karma-chai": "^0.1.0",
-      "karma-firefox-launcher": "^0.1.3",
-      "karma-mocha": "^0.1.3",
-      "karma-phantomjs-launcher": "^0.1.2",
-      "karma-requirejs": "^0.2.1",
-      "karma-safari-launcher": "^0.1.1",
-      "karma-spec-reporter": "^0.0.10"
+      "broccoli": "~0.4.1",
+      "broccoli-static-compiler": "~0.1.1",
+      "broccoli-traceur": "~0.1.0",
+      "karma": "~0.12.0",
+      "karma-chai": "~0.1.0",
+      "karma-firefox-launcher": "~0.1.3",
+      "karma-mocha": "~0.1.3",
+      "karma-phantomjs-launcher": "~0.1.2",
+      "karma-requirejs": "~0.2.1",
+      "karma-safari-launcher": "~0.1.1",
+      "karma-spec-reporter": "~0.0.10"
   }
 }
