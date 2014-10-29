@@ -2,8 +2,8 @@
  * Created by tc on 6/Mar/2014.
  */
 
-module _ from 'lodash';
-module angular from 'angular';
+import _ from 'lodash';
+import angular from 'angular';
 import {app} from 'app';
 import Room from 'Room';
 

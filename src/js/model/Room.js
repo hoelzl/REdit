@@ -48,10 +48,11 @@ export class Room extends EventEmitter {
             var cost = distance;
             for (var k = 0; k < radiationSources.length; k++) {
                var radiationDist = dist3(p1, p2, radiationSources[k]);
-               console.log('radiationDist', radiationDist, cost);
+               // console.log('radiationDist', radiationDist, cost);
+               // TODO: This should not be hardcoded
                cost += 10000 * (radiationSources[k].strength || 1) /
                        (radiationDist * radiationDist);
-               console.log('new cost', cost);
+               // console.log('new cost', cost);
             }
             edges.push({from: {x: x1, y: y1}, to: {x: x2, y: y2}, cost: cost, dist: distance});
             edges.push({from: {x: x2, y: y2}, to: {x: x1, y: y1}, cost: cost, dist: distance});

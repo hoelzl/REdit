@@ -2,10 +2,10 @@
  * Created by tc on 6/Mar/2014.
  */
 
-module _ from 'lodash';
-module domReady from 'domReady';
-module fabric from 'fabric';
-module jQuery from 'jquery';
+import _ from 'lodash';
+import domReady from 'domReady';
+import fabric from 'fabric';
+import jQuery from 'jquery';
 
 import {app} from 'app';
 import {Room} from 'Room';

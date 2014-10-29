@@ -68,7 +68,7 @@ require(['traceurRuntime'], function () {
    function registerModule (name) {
       $traceurRuntime.ModuleStore.registerModule(name, paths[name]);
    }
-
+    
    var modules = ['domReady', 'jquery', 'angular', 'angularRoute',
                   'ui.bootstrap', 'ui.utils', 'NavbarController',
                   'RoomController', 'REditController', 'InspectorController',
@@ -77,6 +77,8 @@ require(['traceurRuntime'], function () {
       registerModule(modules[i]);
    }
 
+   console.log('Registered modules');
+    
    require(modules, function (domReady) {
       domReady(function () {
          angular.bootstrap(document, ['app']);

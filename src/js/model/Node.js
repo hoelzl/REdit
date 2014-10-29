@@ -2,9 +2,12 @@
  * Created by tc on 17/Mar/2014.
  */
 
-module fabric from 'fabric';
-module jQuery from 'jquery';
+import fabric from 'fabric';
+import jQuery from 'jquery';
 
+// console.log('Node.js: fabric =', fabric);
+// console.log('Node.js: fabric.util =', fabric.util);
+// console.log('Node.js: fabric.util.createClass =', fabric.util.createClass);
 
 export function mergeDefaults (parameters, defaults) {
    var result = {};

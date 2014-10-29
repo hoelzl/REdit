@@ -4,7 +4,7 @@
 
 // A subset of the node.js EventEmitter class.
 
-module _ from 'lodash';
+import _ from 'lodash';
 
 export class EventEmitter {
    constructor () {
